@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/home/tabs/QuranSura.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class QuranTab extends StatelessWidget {
 
   List<String> suraNames = [
@@ -35,27 +35,21 @@ class QuranTab extends StatelessWidget {
             Expanded(
               child:  Text(
                 textAlign: TextAlign.center,
-                "Sura Name",
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600
-              ),),
+                AppLocalizations.of(context)!.suraName,
+                style: Theme.of(context).textTheme.titleMedium,),
             ),
             Container(
               height: height * 0.06,
               child: VerticalDivider(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.tertiary,
                 thickness: 3,
               ),
             ),
             Expanded(
               child:  Text(
-                "Verses Number",
+                AppLocalizations.of(context)!.versesNumber,
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 25
-              ),),
+                style: Theme.of(context).textTheme.titleMedium,),
             ),
           ],
         ),
