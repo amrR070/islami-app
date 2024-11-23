@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 
 import '../../Aheadeth_Details/ahadeth_details.dart';
 import 'hadeth.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class AhadethTab extends StatefulWidget {
 
   @override
@@ -21,10 +21,8 @@ class _AhadethTabState extends State<AhadethTab> {
         Expanded(
             child: Image.asset("assets/images/hadith_header.png")),
         Divider(),
-        Text("Ahadeth",style: TextStyle(
-          fontSize:25,
-          fontWeight:  FontWeight.w600
-        ),),
+        Text(AppLocalizations.of(context)!.ahadeth
+          ,style: Theme.of(context).textTheme.titleMedium,),
         Divider(),
         Expanded(
           flex: 2,
@@ -38,9 +36,9 @@ class _AhadethTabState extends State<AhadethTab> {
                 child: Text(
                   ahadethList[index].titles,
                    textAlign: TextAlign.center,
-                   style: TextStyle(
-                   fontSize:25,
-                   fontWeight:  FontWeight.w600),
+                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                     fontWeight: FontWeight.w400
+                   ),
                 ),
               ),
               separatorBuilder: (context, index) => Divider(),

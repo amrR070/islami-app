@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class SuraVerses extends StatelessWidget {
   String verses ;
@@ -13,10 +14,7 @@ class SuraVerses extends StatelessWidget {
       "$verses ($versesNumber)",
       textAlign: TextAlign.center,
       textDirection: TextDirection.rtl,
-      style: TextStyle(
-        fontWeight: FontWeight.w600,
-            fontSize: 20,
-      ),
+      style: Theme.of(context).textTheme.bodyMedium,
 
 
     );

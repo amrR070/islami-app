@@ -49,6 +49,106 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Islami`
+  String get islami {
+    return Intl.message(
+      'Islami',
+      name: 'islami',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sura Name`
+  String get suraName {
+    return Intl.message(
+      'Sura Name',
+      name: 'suraName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verses Number`
+  String get versesNumber {
+    return Intl.message(
+      'Verses Number',
+      name: 'versesNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quran`
+  String get quran {
+    return Intl.message(
+      'Quran',
+      name: 'quran',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ahadeth`
+  String get ahadeth {
+    return Intl.message(
+      'Ahadeth',
+      name: 'ahadeth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sebha`
+  String get sebha {
+    return Intl.message(
+      'Sebha',
+      name: 'sebha',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Radio`
+  String get radio {
+    return Intl.message(
+      'Radio',
+      name: 'radio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get theme {
+    return Intl.message(
+      'Theme',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +157,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 
