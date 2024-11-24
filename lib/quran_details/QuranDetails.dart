@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/quran_details/SuraVerses.dart';
+import 'package:provider/provider.dart';
 
+import '../providers/SettingsProviders.dart';
 import '../style/AppStyle.dart';
 
 class QuranDetails extends StatefulWidget {
@@ -15,12 +17,16 @@ class QuranDetails extends StatefulWidget {
 class _QuranDetailsState extends State<QuranDetails> {
   @override
   Widget build(BuildContext context) {
+    SettingsProviders settingsProviders = Provider.of<SettingsProviders>(context);
     QuranDetailsArguments args = ModalRoute.of(context)?.settings.arguments as QuranDetailsArguments;
-    loadfile(args.index);
+    if (lines.isEmpty)
+      {
+        loadfile(args.index);
+      }
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(AppStyle.isDark
+            image: AssetImage(settingsProviders.themeMode == ThemeMode.dark
                 ?"assets/images/home_dark_background.png"
                 :"assets/images/background.png"),
             fit: BoxFit.fill,
@@ -32,8 +38,6 @@ class _QuranDetailsState extends State<QuranDetails> {
         ),
         body: Card(
           margin: EdgeInsets.all(20),
-          color: Colors.white,
-          surfaceTintColor: Colors.white,
           child: lines.isEmpty
               ?Center(child: CircularProgressIndicator())
               :ListView.separated(
