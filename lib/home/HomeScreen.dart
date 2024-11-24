@@ -5,6 +5,8 @@ import 'package:islami_app/home/tabs/RadioTab.dart';
 import 'package:islami_app/home/tabs/SebhaTab.dart';
 import 'package:islami_app/home/tabs/setting_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+import '../providers/SettingsProviders.dart';
 import '../style/AppStyle.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,11 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
+    SettingsProviders settingsProviders = Provider.of<SettingsProviders>(context);
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
             image: AssetImage(
-              AppStyle.isDark
+              settingsProviders.themeMode == ThemeMode.dark
                 ?"assets/images/home_dark_background.png"
                 :"assets/images/background.png"
             ),

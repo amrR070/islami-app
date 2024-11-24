@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/home/tabs/themeBottomSheet.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/SettingsProviders.dart';
 import 'LanguageBottomSheet.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -10,6 +12,7 @@ class SettingTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProviders settingsProviders = Provider.of<SettingsProviders>(context);
     return Container(
       margin : EdgeInsets.all(20),
       child: Column(
@@ -40,7 +43,10 @@ class SettingTab extends StatelessWidget {
                   width: 2,
                 )
               ),
-              child: Text("English", style: TextStyle(
+              child: Text(settingsProviders.language == "ar"
+                  ?"العربية"
+                  :"English",
+                style: TextStyle(
                   fontSize: 25,
               ),),
             ),
@@ -71,7 +77,10 @@ class SettingTab extends StatelessWidget {
                     return ThemeBottomSheet();
                   },);
               },
-              child: Text("Light", style: TextStyle(
+              child: Text(settingsProviders.themeMode == ThemeMode.dark
+                  ?AppLocalizations.of(context)!.dark
+                  :AppLocalizations.of(context)!.light,
+                style: TextStyle(
                 fontSize: 25,
               ),),
             ),

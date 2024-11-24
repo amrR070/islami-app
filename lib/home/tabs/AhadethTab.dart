@@ -55,11 +55,11 @@ class _AhadethTabState extends State<AhadethTab> {
     String fileContent = await rootBundle.loadString("assets/files/ahadeth.txt");
     List<String> ahadethData = fileContent.split("#");
 
-    for (int i = 0; i <= ahadethData.length ; i++)
+    for (int i = 0; i < ahadethData.length ; i++)
     {
         List<String> ahadethLines = ahadethData[i].trim().split("\n");
         String ahatethTitle = ahadethLines[0];
-        ahadethLines.remove(ahadethLines[0]);
+        ahadethLines.removeAt(0);
         String ahadethContent = ahadethLines.join(" ");
         ahadethList.add(Hadeth(content: ahadethContent, titles: ahatethTitle));
       }

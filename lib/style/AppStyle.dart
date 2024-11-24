@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppStyle{
-  static bool isDark = true;
+  static bool isDark = false;
   static Color lightPrimaryColor = Color(0xFFB7935F);
   static Color darkPrimaryColor = Color(0xFF141A2E);
   static Color darkSecondary = Color(0xFFFACC1D);
@@ -25,6 +25,11 @@ class AppStyle{
           fontSize: 25,
           color: lightPrimaryColor
       ),
+      bodyLarge: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 25,
+          color: Colors.white
+      )
     ),
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
@@ -49,12 +54,13 @@ class AppStyle{
       iconTheme: IconThemeData(),
       buttonTheme: ButtonThemeData(),
       colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.deepPurple,
+        seedColor: Colors.white,
         primary: lightPrimaryColor,
         secondary: lightPrimaryColor.withOpacity(0.57),
         onPrimary: Colors.white,
-        onSecondary: Colors.black,
-          tertiary: lightPrimaryColor
+        onSecondary: Colors.white,
+          tertiary: lightPrimaryColor,
+
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
 
@@ -95,6 +101,11 @@ class AppStyle{
               fontSize: 25,
               color: darkSecondary
           ),
+          bodyLarge: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+              color: Colors.black
+          )
       ),
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
@@ -112,14 +123,14 @@ class AppStyle{
       ),
       cardTheme: CardTheme(
           margin: EdgeInsets.all(20),
-          color: darkPrimaryColor.withOpacity(0.8),
-          surfaceTintColor: darkPrimaryColor.withOpacity(0.8),
+          color: darkPrimaryColor,
+          surfaceTintColor: darkPrimaryColor,
           elevation: 30
       ),
       iconTheme: IconThemeData(),
       buttonTheme: ButtonThemeData(),
       colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.deepPurple,
+        seedColor: Colors.black,
         primary: darkPrimaryColor,
         secondary: darkPrimaryColor.withOpacity(0.57),
         onPrimary: Colors.white,
