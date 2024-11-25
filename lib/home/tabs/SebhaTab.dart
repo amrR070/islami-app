@@ -42,7 +42,7 @@ class _SebhaTabState extends State<SebhaTab> {
                 child: Image.asset(
                     settingsProviders.themeMode == ThemeMode.dark
                     ?"assets/images/head of seb7a dark.png"
-                    :"assets/images/head of seb7a.png"),
+                    :"assets/images/head of seb7a.png",),
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -56,7 +56,9 @@ class _SebhaTabState extends State<SebhaTab> {
                     angle: angle,
                     child: Image.asset(settingsProviders.themeMode == ThemeMode.dark
                         ?"assets/images/body of seb7a dark.png"
-                        :"assets/images/body of seb7a.png"),
+                        :"assets/images/body of seb7a.png",
+                      height: height * 0.35,
+                    ),
                   ),
                 ),
               ),
