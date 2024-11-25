@@ -30,7 +30,11 @@ class AhadethDetails extends StatelessWidget {
             Expanded(
               child: Card(
                 child: SingleChildScrollView(
-                    child: Text(args.content, style:Theme.of(context).textTheme.bodyMedium,)),
+                    child: Text(
+                      args.content,
+                      style:Theme.of(context).textTheme.bodyMedium,
+                      textDirection: TextDirection.rtl,
+                    )),
               ),
             ),
           ],
