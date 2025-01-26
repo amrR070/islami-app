@@ -32,15 +32,14 @@ class QuranSura extends StatelessWidget {
             child:  Text(
               suraName,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w400
               ),),
           ),
           Container(
             height: height * 0.06,
             child: VerticalDivider(
-              color: Theme.of(context).colorScheme.primary,
+              color: Theme.of(context).colorScheme.tertiary,
               thickness: 3,
             ),
           ),
@@ -48,9 +47,8 @@ class QuranSura extends StatelessWidget {
             child:  Text(
               suraNumber.toString(),
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 25
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w400
               ),),
           ),
         ],
